@@ -90,7 +90,6 @@ map U <PageUp>
 "
 " ###############################################
 
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
@@ -104,14 +103,14 @@ augroup HiglightTODO
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
 augroup END
 
-
 "ColorScheme
 let python_highlight_all=1
 " color-issue when using vim through tmux
 set term=screen
 set t_Co=256
-let g:solarized_termcolors=256
 
+" Solarized
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
@@ -127,7 +126,6 @@ let g:CommandTAcceptSelectionSplitMap=1
 " SuperTab
 let g:SuperTabDefaultCompletionType="context"
 
-
 " jedi-vim
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#goto_definitions_command = "<leader>d"
@@ -135,22 +133,28 @@ let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#force_py_version=3
 let g:jedi#show_call_signatures="1"
 
-"pymode
+" pymode
 let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 0
 let g:pymode_rope_lookup_project = 1
 let g:pymode_rope = 0
 let g:pymode_options_max_line_length = 100
 
-
 " HIVE
 au BufNewFile,BufRead *.hql set filetype=hive expandtab
 au BufNewFile,BufRead *.q set filetype=hive expandtab
 
-
-"GNUPLOT Filetye regognition
+" GNUPLOT Filetye regognition
 autocmd BufNewFile,BufRead *.gnu set syntax=gnuplot
 
+
+" ###############################################
+"
+"       MISC
+"
+" ###############################################
+
+" VirtualEnv Support for Python
 if has('py3')
 py << EOF
 import os.path
