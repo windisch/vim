@@ -84,6 +84,12 @@ map U <PageUp>
 "VISUAL-BLOCK Mode and Windoof
 :nnoremap <Alt-v> <c-v>
 
+" easymotion configuration
+nmap s <Plug>(easymotion-s)
+let g:EasyMotion_smartcase=1
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
 " ###############################################
 "
 "       Colors
