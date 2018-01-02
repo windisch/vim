@@ -205,7 +205,7 @@ set spelllang=en
 command Spde set spell spelllang=de
 command Spen set spell spelllang=en
 
-" Tex
+" Filetypes where spell should be enabled
 autocmd FileType tex setlocal spell 
 autocmd FileType md setlocal spell 
 
