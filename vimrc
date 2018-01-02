@@ -19,6 +19,8 @@ set incsearch
 set hlsearch
 set encoding=utf-8
 
+set completeopt-=preview
+
 " disables word wrap
 set linebreak
 set tw=70
@@ -58,10 +60,10 @@ set tabstop=3
 set shiftwidth=4
 set expandtab 
 
-"Completion
+" Completion
 set complete+=k
 
-"set some latex-keywords for completion
+" set some latex-keywords for completion
 set iskeyword+=:,- 
 
 
@@ -170,12 +172,10 @@ let g:Tex_SmartKeyDot=0
 let g:tex_FoldedEnvironments='comment,gather,align,figure,table,thebibliography,keywords,abstract,titlepage,tikzpicture,proof'
 "notice that it is tex instead of Tex
 let g:tex_comment_nospell= 1 "no spell-check in comments
-"let g:Tex_PromptedEnvironments='thm,defn,equation,equation*,$$,split,figure'
 let g:Tex_PromptedEnvironments='equation*,split'
+
 "removes <++> coming from $$
 let g:Imap_UsePlaceHolders = 0
-
-set completeopt-=preview
 
 "Environments
 let g:Tex_Env_{'thm'} = "\\begin{thm}\\label{thm:}\<CR>\<CR>\\end{thm}"
@@ -194,10 +194,26 @@ let g:Tex_Env_{'block'} = "\\begin{block}{<++>}\<CR><++>\<CR>\\end{block}"
 
 " ###############################################
 "
-"       Syntax and file endings
+"       Spelling
 "
 " ###############################################
 
+" Default spelling language
+set spelllang=en
+
+" Swith spelling language
+command Spde set spell spelllang=de
+command Spen set spell spelllang=en
+
+" Tex
+autocmd FileType tex setlocal spell 
+autocmd FileType md setlocal spell 
+
+" ###############################################
+"
+"       Syntax and file endings
+"
+" ###############################################
 
 " HIVE
 au BufNewFile,BufRead *.hql set filetype=hive expandtab
@@ -214,6 +230,9 @@ autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx,*.py set filetype=python
 "       MISC
 "
 " ###############################################
+
+
+
 
 " VirtualEnv Support for Python
 if has('py3')
