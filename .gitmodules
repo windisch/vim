@@ -22,3 +22,6 @@
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
