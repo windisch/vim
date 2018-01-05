@@ -6,6 +6,12 @@ call pathogen#helptags()
 filetype plugin indent on
 syntax on
 
+
+set foldmethod=indent   
+set foldnestmax=10
+set foldenable
+set foldlevel=2
+
 " ###############################################
 "
 "       Global configurations
@@ -128,8 +134,8 @@ set t_Co=256
 
 " Solarized
 let g:solarized_termcolors=256
-set background=dark
 colorscheme solarized
+set background=light
 
 " ###############################################
 "
@@ -156,7 +162,15 @@ let g:pymode_options_colorcolumn = 0
 let g:pymode_rope_lookup_project = 1
 let g:pymode_rope = 0
 let g:pymode_options_max_line_length = 100
-
+" Enable static code checking
+let g:pymode_lint = 1
+let g:pymode_lint_on_write = 1
+" Use python interpreter from venv
+let g:pymode_virtualenv = 1
+" Enable Folding
+let g:pymode_folding = 1
+" Disable rope (python refactoring library)
+let g:pymode_rope = 0
 
 " latex
 set grepprg=grep\ -nH\ $*
@@ -224,26 +238,3 @@ autocmd BufNewFile,BufRead *.gnu set syntax=gnuplot
 
 "Sage Filetype recognition 
 autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx,*.py set filetype=python
-
-" ###############################################
-"
-"       MISC
-"
-" ###############################################
-
-
-
-
-" VirtualEnv Support for Python
-if has('py3')
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-        project_base_dir = os.environ['VIRTUAL_ENV']
-        sys.path.insert(0, project_base_dir)
-        activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-        execfile(activate_this, dict(__file__=activate_this))
-EOF
-endif
