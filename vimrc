@@ -137,6 +137,10 @@ let g:solarized_termcolors=256
 colorscheme solarized
 set background=dark
 
+" Turn lights on and off
+command LightOn set background=light
+command LightOff set background=dark
+
 " ###############################################
 "
 "       Plugin configurations
