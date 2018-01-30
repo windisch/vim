@@ -135,7 +135,7 @@ set t_Co=256
 " Solarized
 let g:solarized_termcolors=256
 colorscheme solarized
-set background=light
+set background=dark
 
 " ###############################################
 "
