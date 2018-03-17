@@ -35,8 +35,13 @@ set tw=70
 set shortmess+=I
 
 "swap files
+silent !mkdir -p /tmp/vim/backup > /dev/null 2>&1
 set backupdir=/tmp/vim/backup/
+
+silent !mkdir -p /tmp/vim/swap > /dev/null 2>&1
 set directory=/tmp/vim/swap/
+
+silent !mkdir -p /tmp/vim/undo > /dev/null 2>&1
 set undodir=/tmp/vim/undo/
 
 " create splits below
