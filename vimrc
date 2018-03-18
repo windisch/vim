@@ -162,6 +162,7 @@ let g:SuperTabDefaultCompletionType="context"
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#documentation_command = "<leader>h"
 let g:jedi#force_py_version=3
 let g:jedi#show_call_signatures="1"
 
