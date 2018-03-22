@@ -74,10 +74,6 @@ set expandtab
 " Completion
 set complete+=k
 
-" set some latex-keywords for completion
-set iskeyword+=:,- 
-
-
 " ###############################################
 "
 "       Key bindings
