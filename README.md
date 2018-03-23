@@ -28,14 +28,15 @@ least the following options is required:
 ```
 
 ### Python
-To make use of all python plugins added to this VIM configuration, the
-following packages should be available for the python
-interpreter accessible by `python` (no matter whether it is Python2 or
-Python3, inside or outside of a virtual environment)
 
-- `jedi`
-- `pylama`
-- `flake8`
+To effiently write and edit python code, the VIM plugin
+[pymode](https://github.com/python-mode/) is used. Here are some of my
+most frequently used shortcuts:
+
+* `<leader>b`: Set a `pdb` break point
+* `<leader>h`: Show docstring
+* `<leader>d`: Go to definition
+* `<leader>g`: Go to first assignment
 
 ### Latex
 If you want to edit and compile latex code, make sure that `pdflatex`
