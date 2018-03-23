@@ -165,18 +165,25 @@ let g:jedi#show_call_signatures="1"
 " pymode
 let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 0
-let g:pymode_rope_lookup_project = 1
-let g:pymode_rope = 0
 let g:pymode_options_max_line_length = 100
 " Enable static code checking
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
+let g:pymode_lint_todo_symbol = 'DO'
 " Use python interpreter from venv
 let g:pymode_virtualenv = 1
 " Enable Folding
 let g:pymode_folding = 1
 " Disable rope (python refactoring library)
 let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 1
+" run code
+let g:pymode_run = 1
+let g:pymode_run_bind = '<leader>r'
+" break points
+let g:pymode_break_point = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_breakpoint_cmd = 'import pdb; pdb.set_trace()'
 
 " latex
 set grepprg=grep\ -nH\ $*
