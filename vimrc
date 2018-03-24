@@ -169,7 +169,6 @@ let g:pymode_options_max_line_length = 100
 " Enable static code checking
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
-let g:pymode_lint_todo_symbol = 'DO'
 " Use python interpreter from venv
 let g:pymode_virtualenv = 1
 " Enable Folding
