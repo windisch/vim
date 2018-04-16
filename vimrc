@@ -234,6 +234,7 @@ command Spen set spell spelllang=en
 " Filetypes where spell should be enabled
 autocmd FileType tex setlocal spell 
 autocmd FileType md setlocal spell 
+autocmd FileType python setlocal spell
 
 " ###############################################
 "
