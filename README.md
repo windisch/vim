@@ -52,7 +52,7 @@ useful.
 Without ansible, you can clone the repository with
 
 ```
-git clone --recursive https://github.com/wnidisch/vim.git ~/.vim
+git clone --recursive https://github.com/windisch/vim.git ~/.vim
 ```
 As all plugins are included via submodules in git, do not forget to
 add `--recursive`. I also provided my `vimrc`, if you want to use
