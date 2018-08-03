@@ -250,7 +250,7 @@ au BufNewFile,BufRead *.q set filetype=hive expandtab
 autocmd BufNewFile,BufRead *.gnu set syntax=gnuplot
 
 " Groovy
-au BufNewFile,BufRead Jenkinsfile set filetype=groovy expandtab
+au BufNewFile,BufRead Jenkinsfile, *gy set filetype=groovy expandtab
 
 "Sage Filetype recognition 
 autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx,*.py set filetype=python
