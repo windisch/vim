@@ -31,10 +31,10 @@ set completeopt-=preview
 set linebreak
 set tw=70
 
-"Disable welcome screen
+" Disable welcome screen
 set shortmess+=I
 
-"swap files
+" swap files
 silent !mkdir -p /tmp/vim/backup > /dev/null 2>&1
 set backupdir=/tmp/vim/backup/
 
@@ -48,7 +48,7 @@ set undodir=/tmp/vim/undo/
 set splitbelow
 set splitright
 
-"speed-up scrolling
+" speed-up scrolling
 set ttyfast
 set ttyscroll=3
 set lazyredraw
@@ -80,17 +80,17 @@ set complete+=k
 "
 " ###############################################
 
-"<Leader>-Key (needed for command-T plugin)
+" <Leader>-Key (needed for command-T plugin)
 let mapleader=' '
 let maplocalleader= ',,'
 
-"Navigation through line wraps
+" Navigation through line wraps
 map <silent> j gj
 map <silent> k gk
 map D <PageDown>
 map U <PageUp>
 
-"VISUAL-BLOCK Mode and Windoof
+" VISUAL-BLOCK Mode and Windoof
 :nnoremap <Alt-v> <c-v>
 
 " easymotion configuration
@@ -99,13 +99,13 @@ let g:EasyMotion_smartcase=1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-" map environmen-key <F5> to <C-e> in tex files
+" map environment-key <F5> to <C-e> in tex files
 au BufEnter *.tex map <C-e> <F5>
 au BufEnter *.tex imap <C-e> <F5>
 au BufEnter *.tex vmap cc I%<ESC>
 au BufEnter *.tex set autowrite
 
-
+" execution of macaulay2 scripts
 au BufEnter *.m2 vmap cc I--<ESC>
 
 " ###############################################
@@ -121,14 +121,15 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-"highlight special keywords
+" highlight special keywords
 augroup HiglightTODO
     autocmd!
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
 augroup END
 
-"ColorScheme
+" ColorScheme
 let python_highlight_all=1
+
 " color-issue when using vim through tmux
 set term=screen
 set t_Co=256
@@ -193,17 +194,17 @@ let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape --synctex=1 -interaction=non
 let g:Tex_GotoError = 0
 let g:Tex_ViewRule_pdf = 'Skim'
 let g:Tex_FoldedMisc='item,slide,emptyslide,wideslide,preamble,frame,<<<'
-"disable ... -> \ldots
+" disable ... -> \ldots
 let g:Tex_SmartKeyDot=0 
 let g:tex_FoldedEnvironments='comment,gather,align,figure,table,thebibliography,keywords,abstract,titlepage,tikzpicture,proof'
-"notice that it is tex instead of Tex
+" note that it is tex instead of Tex
 let g:tex_comment_nospell= 1 "no spell-check in comments
 let g:Tex_PromptedEnvironments='equation*,split'
 
-"removes <++> coming from $$
+" removes <++> coming from $$
 let g:Imap_UsePlaceHolders = 0
 
-"Environments
+" Environments
 let g:Tex_Env_{'thm'} = "\\begin{thm}\\label{thm:}\<CR>\<CR>\\end{thm}"
 let g:Tex_Env_{'theorem'} = "\\begin{theorem}\\label{t:<++>}\<CR>\<CR>\\end{theorem}"
 let g:Tex_Env_{'lemma'} = "\\begin{lemma}\\label{l:<++>}\<CR>\<CR>\\end{lemma}"
@@ -252,5 +253,5 @@ autocmd BufNewFile,BufRead *.gnu set syntax=gnuplot
 " Groovy
 au BufNewFile,BufRead Jenkinsfile set filetype=groovy expandtab
 
-"Sage Filetype recognition 
+" Sage Filetype recognition 
 autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx,*.py set filetype=python
