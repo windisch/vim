@@ -7,7 +7,7 @@ configuration as starting point for yours!
 ## Requirements
 
 ### VIM
-A installed version of VIM in version `>=8.0` that is compiled with at
+An installed version of VIM in version `>=8.0` that is compiled with at
 least the following options is required:
 
 ```
