@@ -33,4 +33,4 @@
 	url = https://github.com/christoomey/vim-tmux-navigator.git
 [submodule "bundle/vimoutliner"]
 	path = bundle/vimoutliner
-	url = git@github.com:vimoutliner/vimoutliner.git
+	url = https://github.com/vimoutliner/vimoutliner.git
