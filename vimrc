@@ -34,6 +34,9 @@ set tw=70
 " Disable welcome screen
 set shortmess+=I
 
+" Show matching brackets
+set showmatch
+
 " swap files
 silent !mkdir -p /tmp/vim/backup > /dev/null 2>&1
 set backupdir=/tmp/vim/backup/
