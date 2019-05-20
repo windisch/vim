@@ -7,7 +7,7 @@ configuration as starting point for yours!
 ## Requirements
 
 ### VIM
-A installed version of VIM in version `>=8.0` that is compiled with at
+An installed version of VIM in version `>=8.0` that is compiled with at
 least the following options is required:
 
 ```
@@ -28,14 +28,15 @@ least the following options is required:
 ```
 
 ### Python
-To make use of all python plugins added to this VIM configuration, the
-following packages should be available for the python
-interpreter accessible by `python` (no matter whether it is Python2 or
-Python3, inside or outside of a virtual environment)
 
-- `jedi`
-- `pylama`
-- `flake8`
+To effiently write and edit python code, the VIM plugin
+[pymode](https://github.com/python-mode/) is used. Here are some of my
+most frequently used shortcuts:
+
+* `<leader>b`: Set a `pdb` break point
+* `<leader>h`: Show docstring
+* `<leader>d`: Go to definition
+* `<leader>g`: Go to first assignment
 
 ### Latex
 If you want to edit and compile latex code, make sure that `pdflatex`
@@ -51,7 +52,7 @@ useful.
 Without ansible, you can clone the repository with
 
 ```
-git clone --recursive https://github.com/wnidisch/vim.git ~/.vim
+git clone --recursive https://github.com/windisch/vim.git ~/.vim
 ```
 As all plugins are included via submodules in git, do not forget to
 add `--recursive`. I also provided my `vimrc`, if you want to use

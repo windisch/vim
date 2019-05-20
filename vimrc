@@ -31,19 +31,24 @@ set completeopt-=preview
 set linebreak
 set tw=70
 
-"Disable welcome screen
+" Disable welcome screen
 set shortmess+=I
 
-"swap files
+" swap files
+silent !mkdir -p /tmp/vim/backup > /dev/null 2>&1
 set backupdir=/tmp/vim/backup/
+
+silent !mkdir -p /tmp/vim/swap > /dev/null 2>&1
 set directory=/tmp/vim/swap/
+
+silent !mkdir -p /tmp/vim/undo > /dev/null 2>&1
 set undodir=/tmp/vim/undo/
 
 " create splits below
 set splitbelow
 set splitright
 
-"speed-up scrolling
+" speed-up scrolling
 set ttyfast
 set ttyscroll=3
 set lazyredraw
@@ -69,27 +74,23 @@ set expandtab
 " Completion
 set complete+=k
 
-" set some latex-keywords for completion
-set iskeyword+=:,- 
-
-
 " ###############################################
 "
 "       Key bindings
 "
 " ###############################################
 
-"<Leader>-Key (needed for command-T plugin)
+" <Leader>-Key (needed for command-T plugin)
 let mapleader=' '
 let maplocalleader= ',,'
 
-"Navigation through line wraps
+" Navigation through line wraps
 map <silent> j gj
 map <silent> k gk
 map D <PageDown>
 map U <PageUp>
 
-"VISUAL-BLOCK Mode and Windoof
+" VISUAL-BLOCK Mode and Windoof
 :nnoremap <Alt-v> <c-v>
 
 " easymotion configuration
@@ -98,13 +99,13 @@ let g:EasyMotion_smartcase=1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-" map environmen-key <F5> to <C-e> in tex files
+" map environment-key <F5> to <C-e> in tex files
 au BufEnter *.tex map <C-e> <F5>
 au BufEnter *.tex imap <C-e> <F5>
 au BufEnter *.tex vmap cc I%<ESC>
 au BufEnter *.tex set autowrite
 
-
+" execution of macaulay2 scripts
 au BufEnter *.m2 vmap cc I--<ESC>
 
 " ###############################################
@@ -120,14 +121,15 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-"highlight special keywords
+" highlight special keywords
 augroup HiglightTODO
     autocmd!
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
 augroup END
 
-"ColorScheme
+" ColorScheme
 let python_highlight_all=1
+
 " color-issue when using vim through tmux
 set term=screen
 set t_Co=256
@@ -135,7 +137,11 @@ set t_Co=256
 " Solarized
 let g:solarized_termcolors=256
 colorscheme solarized
-set background=light
+set background=dark
+
+" Turn lights on and off
+command LightOn set background=light
+command LightOff set background=dark
 
 " ###############################################
 "
@@ -153,14 +159,13 @@ let g:SuperTabDefaultCompletionType="context"
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#documentation_command = "<leader>h"
 let g:jedi#force_py_version=3
 let g:jedi#show_call_signatures="1"
 
 " pymode
 let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 0
-let g:pymode_rope_lookup_project = 1
-let g:pymode_rope = 0
 let g:pymode_options_max_line_length = 100
 " Enable static code checking
 let g:pymode_lint = 1
@@ -171,6 +176,14 @@ let g:pymode_virtualenv = 1
 let g:pymode_folding = 1
 " Disable rope (python refactoring library)
 let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 1
+" run code
+let g:pymode_run = 1
+let g:pymode_run_bind = '<leader>r'
+" break points
+let g:pymode_break_point = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_breakpoint_cmd = 'import pdb; pdb.set_trace()'
 
 " latex
 set grepprg=grep\ -nH\ $*
@@ -181,17 +194,17 @@ let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape --synctex=1 -interaction=non
 let g:Tex_GotoError = 0
 let g:Tex_ViewRule_pdf = 'Skim'
 let g:Tex_FoldedMisc='item,slide,emptyslide,wideslide,preamble,frame,<<<'
-"disable ... -> \ldots
+" disable ... -> \ldots
 let g:Tex_SmartKeyDot=0 
 let g:tex_FoldedEnvironments='comment,gather,align,figure,table,thebibliography,keywords,abstract,titlepage,tikzpicture,proof'
-"notice that it is tex instead of Tex
+" note that it is tex instead of Tex
 let g:tex_comment_nospell= 1 "no spell-check in comments
 let g:Tex_PromptedEnvironments='equation*,split'
 
-"removes <++> coming from $$
+" removes <++> coming from $$
 let g:Imap_UsePlaceHolders = 0
 
-"Environments
+" Environments
 let g:Tex_Env_{'thm'} = "\\begin{thm}\\label{thm:}\<CR>\<CR>\\end{thm}"
 let g:Tex_Env_{'theorem'} = "\\begin{theorem}\\label{t:<++>}\<CR>\<CR>\\end{theorem}"
 let g:Tex_Env_{'lemma'} = "\\begin{lemma}\\label{l:<++>}\<CR>\<CR>\\end{lemma}"
@@ -222,6 +235,7 @@ command Spen set spell spelllang=en
 " Filetypes where spell should be enabled
 autocmd FileType tex setlocal spell 
 autocmd FileType md setlocal spell 
+autocmd FileType python setlocal spell
 
 " ###############################################
 "
@@ -236,5 +250,8 @@ au BufNewFile,BufRead *.q set filetype=hive expandtab
 " GNUPLOT Filetye regognition
 autocmd BufNewFile,BufRead *.gnu set syntax=gnuplot
 
-"Sage Filetype recognition 
+" Groovy
+au BufNewFile,BufRead Jenkinsfile set filetype=groovy expandtab
+
+" Sage Filetype recognition 
 autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx,*.py set filetype=python
