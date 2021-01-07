@@ -69,3 +69,5 @@ following command in the directory
 ```
 ruby extconf.rb && make
 ```
+
+This may require the `ruby-dev` packages.
