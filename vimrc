@@ -188,6 +188,13 @@ let g:pymode_break_point = 1
 let g:pymode_breakpoint_bind = '<leader>b'
 let g:pymode_breakpoint_cmd = 'import pdb; pdb.set_trace()'
 
+" pytest
+let g:pytest_executable = "pytest"
+nmap <silent><Leader>f <Esc>:Pytest file<CR>
+nmap <silent><Leader>c <Esc>:Pytest class<CR>
+nmap <silent><Leader>m <Esc>:Pytest method<CR>
+nmap <silent><Leader>p <Esc>:Pytest method -s<CR>
+
 " latex
 set grepprg=grep\ -nH\ $*
 let g:Tex_flavor='latex'

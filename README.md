@@ -38,6 +38,13 @@ most frequently used shortcuts:
 * `<leader>d`: Go to definition
 * `<leader>g`: Go to first assignment
 
+Pytest shortcuts
+
+* `<leader>f`: Run pytest for file
+* `<leader>c`: Run pytest for class
+* `<leader>m`: Run pytest for method
+* `<leader>p`: Run pytest for method with breakpoint somewhere
+
 ### Latex
 If you want to edit and compile latex code, make sure that `pdflatex`
 is installed.
@@ -69,5 +76,3 @@ following command in the directory
 ```
 ruby extconf.rb && make
 ```
-
-This may require the `ruby-dev` packages.
