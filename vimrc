@@ -193,7 +193,7 @@ let g:pytest_executable = "pytest"
 nmap <silent><Leader>f <Esc>:Pytest file<CR>
 nmap <silent><Leader>c <Esc>:Pytest class<CR>
 nmap <silent><Leader>m <Esc>:Pytest method<CR>
-nmap <silent><Leader>p <Esc>:Pytest method -s<CR>
+nmap <silent><Leader>mv <Esc>:Pytest method -s<CR>
 
 " latex
 set grepprg=grep\ -nH\ $*
