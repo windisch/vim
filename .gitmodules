@@ -43,3 +43,6 @@
 [submodule "bundle/jedi-vim"]
 	path = bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim
+[submodule "bundle/vim-jrnl-syntax"]
+	path = bundle/vim-jrnl-syntax
+	url = git@github.com:mode89/vim-jrnl-syntax.git
