@@ -201,7 +201,9 @@ set grepprg=grep\ -nH\ $*
 let g:Tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf'
-let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape --synctex=1 -interaction=nonstopmode $*'
+" Ignore existing makefiles
+let g:Tex_UseMakefile =0
+let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape --src-specials -synctex=1 -interaction=nonstopmode $*'
 let g:Tex_GotoError = 0
 let g:Tex_ViewRule_pdf = 'Skim'
 let g:Tex_FoldedMisc='item,slide,emptyslide,wideslide,preamble,frame,<<<'
@@ -211,6 +213,7 @@ let g:tex_FoldedEnvironments='comment,gather,align,figure,table,thebibliography,
 " note that it is tex instead of Tex
 let g:tex_comment_nospell= 1 "no spell-check in comments
 let g:Tex_PromptedEnvironments='equation*,split'
+let g:vimtex_view_method = 'Skim'
 
 " removes <++> coming from $$
 let g:Imap_UsePlaceHolders = 0
