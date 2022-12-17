@@ -12,12 +12,6 @@ set foldnestmax=10
 set foldenable
 set foldlevel=2
 
-" ###############################################
-"
-"       Global configurations
-"
-" ###############################################
-
 set nocompatible
 set number
 set ignorecase
@@ -110,12 +104,6 @@ au BufEnter *.tex set autowrite
 
 " execution of macaulay2 scripts
 au BufEnter *.m2 vmap cc I--<ESC>
-
-" ###############################################
-"
-"       Colors
-"
-" ###############################################
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -233,11 +221,10 @@ let g:Tex_Env_{'frame'} = "\\begin{frame}\<CR>\\frametitle{<++>}\<CR>\<CR>\\end{
 let g:Tex_Env_{'block'} = "\\begin{block}{<++>}\<CR><++>\<CR>\\end{block}"
 
 
-" ###############################################
-"
-"       Spelling
-"
-" ###############################################
+" Markdown
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 0
+
 
 " Default spelling language
 set spelllang=en
@@ -269,3 +256,6 @@ au BufNewFile,BufRead Jenkinsfile set filetype=groovy expandtab
 
 " Sage Filetype recognition 
 autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx,*.py set filetype=python
+
+" Enable german language in mails
+autocmd BufEnter,BufNewFile  *.markdown Spde
