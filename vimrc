@@ -52,9 +52,8 @@ set lazyredraw
 
 set backspace=indent,eol,start
 
-if has('unnamedplus')
-      set clipboard=unnamed,unnamedplus
-endif
+"Connect vims clipboard with system clipboard
+set clipboard=unnamed
 
 "Enable-File type detection
 syntax enable
@@ -258,4 +257,5 @@ au BufNewFile,BufRead Jenkinsfile set filetype=groovy expandtab
 autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx,*.py set filetype=python
 
 " Enable german language in mails
-autocmd BufEnter,BufNewFile  *.markdown Spde
+autocmd BufEnter,BufNewFile *.markdown Spde
+autocmd BufEnter,BufNewFile *.markdown set tw=0
