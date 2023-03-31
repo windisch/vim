@@ -237,6 +237,9 @@ autocmd FileType tex setlocal spell
 autocmd FileType md setlocal spell 
 autocmd FileType python setlocal spell
 
+" Grammar check with LanguageTool
+let g:languagetool_jar='~/.languagetool/languagetool-commandline.jar'
+
 " ###############################################
 "
 "       Syntax and file endings

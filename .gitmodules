@@ -46,3 +46,6 @@
 [submodule "bundle/vim-jrnl-syntax"]
 	path = bundle/vim-jrnl-syntax
 	url = git@github.com:mode89/vim-jrnl-syntax.git
+[submodule "bundle/vim-LanguageTool"]
+	path = bundle/vim-LanguageTool
+	url = https://github.com/dpelle/vim-LanguageTool.git
