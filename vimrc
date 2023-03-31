@@ -240,6 +240,9 @@ autocmd FileType python setlocal spell
 " Grammar check with LanguageTool
 let g:languagetool_jar='~/.languagetool/languagetool-commandline.jar'
 
+let g:languagetool_disable_rules='COMMA_PARENTHESIS_WHITESPACE,EINHEIT_LEERZEICHEN,PFEILE,F_ANSTATT_PH,WHITESPACE_RULE,ABKUERZUNG_LEERZEICHEN'
+
+
 " ###############################################
 "
 "       Syntax and file endings

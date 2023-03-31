@@ -76,3 +76,15 @@ following command in the directory
 ```
 ruby extconf.rb && make
 ```
+
+### Languagetool
+
+To enable grammar checking (with `:LanguageToolCheck`), the
+[LanguageTool](http://www.languagetool.org/) needs to be installed
+with:
+
+```bash
+wget https://languagetool.org/download/LanguageTool-5.2.zip
+unzip LanguageTool-5.2.zip
+mv LanguageTool-5.2 ~./languagetool
+```
